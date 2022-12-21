@@ -112,8 +112,10 @@ class User(Base):
         return f"{self.user_id}"
 
 
-def generate_user_id():
-    return random.randint(1000, 9999)
+def new_user_id():
+    userid=1000
+    userid=+1
+    return userid
 
 
 @app.route("/", methods=["GET"])
@@ -129,7 +131,7 @@ def index():
         )
     )
     if not request.cookies.get("user_id"):
-        user_id = generate_user_id()
+        user_id = new_user_id()
         response.set_cookie("user_id", value=f"{user_id}")
         User.create(obj_in={"user_id": user_id})
     return response
