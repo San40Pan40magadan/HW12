@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADS</title>
+</head>
+<body>
+    <h2>Все объявления</h2>
+    <a href="/create">Создать объявление</a>
+    {% if ads %}
+        {% for ad in ads%}
+            <p>{{ ad.ad_text }}</p>
+            <p>{{ ad.created_at }}</p>
+            <a href="/edit/{{ ad.id }}">Изменить</a>
+            <a href="/delete/{{ ad.id }}">Удалить</a>
+        {% endfor %}
+    {% else %}
+        <h2>Список объявлений пуст</h2>
+    {% endif %}
+</body>
+</html>

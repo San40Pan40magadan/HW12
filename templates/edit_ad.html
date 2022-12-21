@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Ad</title>
+</head>
+<body>
+    <h3>
+        Изменить объявление:
+    </h3>
+    <p>
+        {{ ad.ad_text}}
+    </p>
+    <p>
+        {{ ad.created_at }}
+    </p>
+    <form method="post">
+        <label for="ad_text"></label>
+        <input type="text" name="ad_text" id="ad_text"/>
+        <button type="submit">Редактировать</button>
+    </form>
+</body>
+</html>
